@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Secular+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(16, 24, 76);
+  background: linear-gradient(
+    90deg,
+    rgba(16, 24, 76, 1) 0%,
+    rgba(20, 17, 55, 1) 50%,
+    rgba(25, 11, 34, 1) 100%
+  );
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  margin-bottom: auto;
+}
+
+.header__title,
+.header__subtitle {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  text-align: right;
+}
+
+.header__title {
+  font-family: 'Secular One', sans-serif;
+  color: #fff;
+  font-size: 3.5rem;
+}
+
+.header__subtitle {
+  font-family: 'Lora', serif;
+  color: #ffd029;
+  font-size: 1.5rem;
+}
+
+.planets__container {
+  margin-bottom: auto;
+  display: flex;
+  align-items: center;
+}
+
+.planet {
+  border-radius: 100%;
+  margin-right: 100px;
+}
+
+.planets__sun {
+  background-color: #ffd029;
+  height: 1200px;
+  width: 800px;
+  /* position: absolute; */
+  margin-left: -750px;
+  margin-top: 0px;
+}
+.planets__mercury {
+  background-color: #888888;
+  height: 14px;
+  width: 14px;
+}
+.planets__venus {
+  background-color: #e7cdcd;
+  height: 26px;
+  width: 26px;
+}
+.planets__earth {
+  background-color: #428ed4;
+  height: 28px;
+  width: 28px;
+}
+.planets__mars {
+  background-color: #ef5f5f;
+  height: 14px;
+  width: 14px;
+}
+
+.planets__jupiter {
+  background-color: #e29468;
+  height: 188px;
+  width: 188px;
+  margin-right: 150px;
+}
+/* Ska ha ringar */
+.planets__saturn {
+  background-color: #c7aa72;
+  height: 144px;
+  width: 144px;
+  margin-right: 150px;
+}
+.planets__uranus {
+  background-color: #c9d4f1;
+  height: 66px;
+  width: 66px;
+  margin-right: 150px;
+}
+.planets__neptune {
+  background-color: #7a91a7;
+  height: 66px;
+  width: 66px;
+}
+
+.hide {
+  display: none;
+}
