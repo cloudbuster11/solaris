@@ -20,8 +20,10 @@ h3 {
 
 h4 {
   font-family: 'Secular One', serif;
+  font-size: 1.1rem;
   color: #fff;
   text-transform: uppercase;
+  letter-spacing: 0.15rem;
 }
 
 h1,
@@ -35,9 +37,13 @@ p,
 ul {
   font-family: 'Roboto Condensed', sans-serif;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
   line-height: 2rem;
+}
+
+li {
+  letter-spacing: 0.15rem;
 }
 
 .wrapper {
@@ -58,8 +64,6 @@ ul {
 }
 
 .header {
-  /* margin-top: 5rem; */
-  /* margin-bottom: auto; */
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -67,27 +71,10 @@ ul {
 
 .header__title,
 .header__subtitle {
-  /* font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.4rem; */
   text-align: right;
 }
 
-.header__title {
-  /* margin-top: 4rem; */
-  /* font-family: 'Secular One', sans-serif;
-  color: #fff;
-  font-size: 3.5rem; */
-}
-
-.header__subtitle {
-  /* font-family: 'Lora', serif;
-  color: #ffd029;
-  font-size: 1.5rem; */
-}
-
 .planets__container {
-  /* margin-bottom: auto; */
   display: flex;
   align-items: center;
 }
@@ -139,7 +126,6 @@ ul {
   background-color: #e29468;
   height: 188px;
   width: 188px;
-  /* margin-right: 150px; */
 }
 /* Ska ha ringar */
 .planets__saturnus {
@@ -147,7 +133,6 @@ ul {
   background-color: #c7aa72;
   height: 144px;
   width: 144px;
-  /* margin-right: 150px; */
 }
 .planets__saturnus:after {
   content: '';
@@ -159,7 +144,6 @@ ul {
   border-width: thin;
   border-top: 4px solid #fff;
   opacity: 40%;
-  /* border-radius: 10px; */
   transform: rotate(-25deg);
   pointer-events: none;
 }
@@ -169,7 +153,6 @@ ul {
   background-color: #c9d4f1;
   height: 66px;
   width: 66px;
-  /* margin-right: 150px; */
 }
 
 .planets__neptunus {
@@ -201,7 +184,7 @@ ul {
 .overlay__background {
   position: absolute;
   height: 100%;
-  width: 80%;
+  width: 100%;
 }
 
 .info__wrapper {
@@ -222,12 +205,9 @@ ul {
   top: 0;
   width: 100%;
   height: 100%;
-  /* max-height: 30rem; */
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* THIS creates the animation! */
   transition: transform 1s;
 }
 
@@ -328,9 +308,7 @@ ul {
 .btn__close {
   color: #fff;
   position: absolute;
-  /* bottom: 50rem; */
   right: 2rem;
-  /* justify-self: flex-end; */
   font-size: 4rem;
   cursor: pointer;
   border: none;
