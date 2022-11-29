@@ -45,9 +45,7 @@ function renderPlanets(planets) {
 }
 
 // Ska visa/gå till rätt slider.
-function displayPlanetInfo(clickedPlanetId, planetsList) {
-  console.log(clickedPlanetId);
-  console.log(planetsList);
+function displayPlanetInfo(clickedPlanetId) {
   slider(clickedPlanetId);
   showAndHide();
 }
@@ -177,11 +175,9 @@ const slider = function (clickedPlanetId) {
 
   document.addEventListener('click', function (e) {
     if (e.target.classList.contains('dots__dot')) {
-      console.log('dot');
       const { slide } = e.target.dataset;
       goToSlide(slide);
       activateDot(slide);
     }
   });
 };
-// slider();

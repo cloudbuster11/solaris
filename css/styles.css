@@ -94,6 +94,7 @@ ul {
 
 .planet {
   border-radius: 100%;
+  cursor: pointer;
 }
 
 .planets__solen {
@@ -195,6 +196,12 @@ ul {
   position: absolute;
   display: flex;
   transition: transform 1s;
+}
+
+.overlay__background {
+  position: absolute;
+  height: 100%;
+  width: 80%;
 }
 
 .info__wrapper {
@@ -321,14 +328,14 @@ ul {
 .btn__close {
   color: #fff;
   position: absolute;
-  bottom: 70rem;
+  /* bottom: 50rem; */
   right: 2rem;
-  justify-self: flex-end;
+  /* justify-self: flex-end; */
   font-size: 4rem;
   cursor: pointer;
   border: none;
   background: none;
-  z-index: 10;
+  z-index: 999;
 }
 
 .hide {
