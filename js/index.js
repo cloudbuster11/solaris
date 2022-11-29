@@ -30,7 +30,8 @@ getPlanets();
 
 planetsContainer.addEventListener('click', (event) => {
   let clickedPlanetId = event.target.dataset.id;
-  displayPlanetInfo(clickedPlanetId, planetsList);
+  if (clickedPlanetId === undefined) return;
+  else displayPlanetInfo(clickedPlanetId, planetsList);
 });
 
 function renderPlanets(planets) {
@@ -53,8 +54,9 @@ function displayPlanetInfo(clickedPlanetId, planetsList) {
 
 // Skapar all html till planet info i overlay
 function renderPlanetInfo(planets) {
-  console.log(planets);
+  // console.log(planets.bodies[5].moons);
   for (let i = 0; i < planets.bodies.length; i++) {
+    const moons = planets.bodies[i].moons;
     const planetInfoHtml = `<article class="info__container" data-id="${planets.bodies[i].id}">
     <section class="info__main">
     <h1 class="info__tile">${planets.bodies[i].name}</h1>
@@ -71,11 +73,22 @@ function renderPlanetInfo(planets) {
     </aside>
     </section>
     <section class="info__moons">
-    <h4 class="secondary__title title-moon">Månar</h4><p class="moon__info">${planets.bodies[i].moons}</p>
+    <h4 class="secondary__title title-moon">Månar</h4><ul id="${i}"></ul>
     </section>
     </article>`;
 
     infoWrapper.insertAdjacentHTML('beforeend', planetInfoHtml);
+
+    const moonList = document.getElementById(`${[i]}`);
+
+    for (let i = 0; i < moons.length; i++) {
+      if (moons.length < 1) {
+        return;
+      } else {
+        const moonElem = `<li>${moons[i]}</li>`;
+        moonList.insertAdjacentHTML('beforeend', moonElem);
+      }
+    }
   }
 }
 

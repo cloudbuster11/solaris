@@ -31,7 +31,8 @@ h3 {
   letter-spacing: 0.4rem;
 }
 
-p {
+p,
+ul {
   font-family: 'Roboto Condensed', sans-serif;
   color: #fff;
   font-size: 1.2rem;
@@ -51,14 +52,17 @@ p {
     rgba(20, 17, 55, 1) 50%,
     rgba(25, 11, 34, 1) 100%
   );
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .header {
-  margin-bottom: auto;
+  /* margin-top: 5rem; */
+  /* margin-bottom: auto; */
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
 }
 
 .header__title,
@@ -70,6 +74,7 @@ p {
 }
 
 .header__title {
+  /* margin-top: 4rem; */
   /* font-family: 'Secular One', sans-serif;
   color: #fff;
   font-size: 3.5rem; */
@@ -82,66 +87,92 @@ p {
 }
 
 .planets__container {
-  margin-bottom: auto;
+  /* margin-bottom: auto; */
   display: flex;
   align-items: center;
 }
 
 .planet {
   border-radius: 100%;
-  margin-right: 100px;
 }
 
 .planets__solen {
   background-color: #ffd029;
   height: 1200px;
   width: 800px;
-  /* position: absolute; */
-  margin-left: -750px;
-  margin-top: 0px;
+  position: relative;
+  left: -600px;
+  margin-right: -450px;
 }
+
 .planets__merkurius {
+  margin-right: 3vw;
   background-color: #888888;
   height: 14px;
   width: 14px;
 }
+
 .planets__venus {
+  margin-right: 3vw;
   background-color: #e7cdcd;
   height: 26px;
   width: 26px;
 }
+
 .planets__jorden {
+  margin-right: 3vw;
   background-color: #428ed4;
   height: 28px;
   width: 28px;
 }
+
 .planets__mars {
+  margin-right: 3vw;
   background-color: #ef5f5f;
   height: 14px;
   width: 14px;
 }
 
 .planets__jupiter {
+  margin-right: 7vw;
   background-color: #e29468;
   height: 188px;
   width: 188px;
-  margin-right: 150px;
+  /* margin-right: 150px; */
 }
 /* Ska ha ringar */
 .planets__saturnus {
+  margin-right: 7vw;
   background-color: #c7aa72;
   height: 144px;
   width: 144px;
-  margin-right: 150px;
+  /* margin-right: 150px; */
 }
+.planets__saturnus:after {
+  content: '';
+  display: block;
+  position: relative;
+  top: 70px;
+  left: -47px;
+  width: 240px;
+  border-width: thin;
+  border-top: 4px solid #fff;
+  opacity: 40%;
+  /* border-radius: 10px; */
+  transform: rotate(-25deg);
+  pointer-events: none;
+}
+
 .planets__uranus {
+  margin-right: 7vw;
   background-color: #c9d4f1;
   height: 66px;
   width: 66px;
-  margin-right: 150px;
+  /* margin-right: 150px; */
 }
 
 .planets__neptunus {
+  margin-right: 7vw;
   background-color: #7a91a7;
   height: 66px;
   width: 66px;
@@ -167,7 +198,7 @@ p {
 }
 
 .info__wrapper {
-  width: 70rem;
+  width: 80rem;
   /* height: 50rem; */
   margin: 0 auto;
   position: relative;
@@ -184,6 +215,7 @@ p {
   top: 0;
   width: 100%;
   height: 100%;
+  /* max-height: 30rem; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,6 +252,14 @@ p {
 .info__moons {
   width: 100%;
   padding-top: 2rem;
+}
+
+ul {
+  padding-left: 1rem;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .slider__btn {
@@ -281,8 +321,9 @@ p {
 .btn__close {
   color: #fff;
   position: absolute;
-  top: 0.5rem;
+  bottom: 70rem;
   right: 2rem;
+  justify-self: flex-end;
   font-size: 4rem;
   cursor: pointer;
   border: none;
