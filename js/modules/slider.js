@@ -7,7 +7,7 @@ const slider = function (clickedPlanetId) {
   const btnRight = document.querySelector('.slider__btn--right');
   const dotContainer = document.querySelector('.dots');
 
-  let curSlide = clickedPlanetId;
+  let curSlide = Number(clickedPlanetId);
   const maxSlide = slides.length;
 
   const createDots = function () {
@@ -61,7 +61,6 @@ const slider = function (clickedPlanetId) {
   const init = function () {
     goToSlide(curSlide);
     createDots();
-
     activateDot(curSlide);
   };
 
