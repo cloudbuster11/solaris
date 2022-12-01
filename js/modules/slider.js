@@ -1,5 +1,4 @@
-// Den här modulen hanterar slidern.
-
+// Den här modulen hanterar all slider funktionalitet. Såsom att skapa "dots", tangenttryck och att vilken planet info som visas.
 export { slider };
 
 const slider = function (clickedPlanetId) {
@@ -65,6 +64,7 @@ const slider = function (clickedPlanetId) {
 
     activateDot(curSlide);
   };
+
   init();
 
   btnRight.addEventListener('click', nextSlide);

@@ -48,9 +48,7 @@ li {
 
 .wrapper {
   width: 100vw;
-  max-width: 100%;
   height: 100vh;
-
   background: rgb(16, 24, 76);
   background: linear-gradient(
     90deg,
@@ -88,26 +86,13 @@ li {
   background-color: #ffd029;
   height: 1200px;
   width: 800px;
-  position: relative;
-  left: -600px;
-  margin-right: -450px;
-}
-
-.planets__solen-blue:before {
-  border-radius: 100%;
-  background: none;
-  border: 40px solid rgba(66, 142, 213, 0.06);
-  content: '';
-  display: block;
   position: absolute;
-  top: -55px;
-  left: 4px;
-  right: -79px;
-  bottom: -55px;
-  pointer-events: none;
+  left: -700px;
+  /* margin-right: 10vw; */
 }
 
 .planets__merkurius {
+  margin-left: 15vw;
   margin-right: 3vw;
   background-color: #888888;
   height: 14px;
@@ -141,13 +126,14 @@ li {
   height: 188px;
   width: 188px;
 }
-/* Ska ha ringar */
+
 .planets__saturnus {
   margin-right: 7vw;
   background-color: #c7aa72;
   height: 144px;
   width: 144px;
 }
+
 .planets__saturnus:after {
   content: '';
   display: block;
@@ -170,13 +156,12 @@ li {
 }
 
 .planets__neptunus {
-  margin-right: 7vw;
   background-color: #7a91a7;
   height: 66px;
   width: 66px;
 }
 
-/* Overlay */
+/* Planets Info */
 .overlay {
   width: 100vw;
   max-width: 100%;
@@ -192,8 +177,6 @@ li {
   left: 0;
   position: absolute;
   display: flex;
-  transition: transform 1s;
-  /* align-items: center; */
 }
 
 .overlay__background {
@@ -202,9 +185,8 @@ li {
   width: 100%;
 }
 
-.info__wrapper {
+.planetsinfo__wrapper {
   width: 80rem;
-  /* height: 50rem; */
   margin: 0 auto;
   position: relative;
   z-index: 10;
@@ -229,6 +211,19 @@ li {
 .info__main {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 2rem;
+}
+
+.info__header {
+  display: flex;
+}
+
+.btn__close {
+  color: #fff;
+  margin-left: auto;
+  font-size: 4rem;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 .info__subtitle {
@@ -273,9 +268,9 @@ ul {
   font-family: inherit;
   color: #333;
   border-radius: 50%;
-  height: 5.5rem;
-  width: 5.5rem;
-  font-size: 3.25rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -316,34 +311,33 @@ ul {
 
 .dots__dot--active {
   background-color: #ffd029;
-  z-index: 999;
   opacity: 1;
-}
-
-.btn__close {
-  color: #fff;
-  position: absolute;
-  right: 2rem;
-  font-size: 4rem;
-  cursor: pointer;
-  border: none;
-  background: none;
-  z-index: 999;
 }
 
 .planets__solen-blue {
   background-color: #428ed4;
-  /* box-shadow: 0px 0px 250px rgba(6, 142, 213, 0.2); */
   box-shadow: 0px 0px 250px rgba(255, 208, 41, 0.2);
-
-  /* border: 40px solid rgba(66, 142, 213, 0.1); */
   outline: 40px solid rgba(66, 142, 213, 0.1);
   height: 1200px;
   width: 800px;
   position: absolute;
-  left: -600px;
-  margin-right: -750px;
+  left: -700px;
+  margin-right: -550px;
   align-self: center;
+}
+
+.planets__solen-blue:before {
+  border-radius: 100%;
+  background: none;
+  border: 40px solid rgba(66, 142, 213, 0.06);
+  content: '';
+  display: block;
+  position: absolute;
+  top: -55px;
+  left: 4px;
+  right: -79px;
+  bottom: -55px;
+  pointer-events: none;
 }
 
 .hide {

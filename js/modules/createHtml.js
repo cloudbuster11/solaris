@@ -1,4 +1,4 @@
-// I den här modulen finns de funktioner som skapar alla Html element.
+// I den här modulen finns de funktioner som skapar Html elementen.
 export { createInfoHtml, createPlanetsHtml };
 
 function createPlanetsHtml(planets, planetsContainer) {
@@ -11,14 +11,19 @@ function createPlanetsHtml(planets, planetsContainer) {
 }
 
 function createInfoHtml(planets) {
-  const infoWrapper = document.querySelector('.info__wrapper');
+  const planetInfoWrapperElem = document.querySelector('.planetsinfo__wrapper');
   for (let i = 0; i < planets.bodies.length; i++) {
-    const moons = planets.bodies[i].moons;
+    const planetsMoons = planets.bodies[i].moons;
+
     const planetInfoHtml = `<article class="info__container" data-id="${planets.bodies[i].id}">
     <section class="info__main">
+    <header class="info__header">
     <h1 class="info__tile">${planets.bodies[i].name}</h1>
+    <button class='btn__close'>&times;</button>;
+    </header>
     <h3 class="info__subtitle">${planets.bodies[i].latinName}</h3>
-    <p class="info__desc">${planets.bodies[i].desc}</p></section>
+    <p class="info__desc">${planets.bodies[i].desc}</p>
+    </section>
     <section class="info__secondary">
     <aside class="secondary__left">
     <h4 class="secondary__title title-circum">Omkrets</h4><p class="secondary__info info-circum">${planets.bodies[i].circumference} km</p>
@@ -34,14 +39,15 @@ function createInfoHtml(planets) {
     </section>
     </article>`;
 
-    infoWrapper.insertAdjacentHTML('beforeend', planetInfoHtml);
+    planetInfoWrapperElem.insertAdjacentHTML('beforeend', planetInfoHtml);
 
-    const moonList = document.getElementById(`${[i]}`);
-    for (let i = 0; i < moons.length; i++) {
-      if (moons.length === 0) return;
+    const moonListElem = document.getElementById(`${[i]}`);
+
+    for (let i = 0; i < planetsMoons.length; i++) {
+      if (planetsMoons.length === 0) return;
       else {
-        const moonElem = `<li>${moons[i]}</li>`;
-        moonList.insertAdjacentHTML('beforeend', moonElem);
+        const moonElem = `<li>${planetsMoons[i]}</li>`;
+        moonListElem.insertAdjacentHTML('beforeend', moonElem);
       }
     }
   }

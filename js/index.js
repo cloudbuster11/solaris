@@ -2,8 +2,8 @@ import { slider } from './modules/slider.js';
 import { createInfoHtml, createPlanetsHtml } from './modules/createHtml.js';
 
 const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
-const planetsContainer = document.querySelector('.planets__container');
-const btnClose = document.querySelector('.btn__close');
+const planetsContainerElem = document.querySelector('.planets__container');
+const planetInfoWrapperElem = document.querySelector('.planetsinfo__wrapper');
 let planetsList = [];
 
 async function getKey() {
@@ -23,21 +23,23 @@ async function getPlanets() {
   });
   let data = await response.json();
   planetsList = data;
-  createPlanetsHtml(data, planetsContainer);
+  createPlanetsHtml(data, planetsContainerElem);
   createInfoHtml(data);
 }
 
 getPlanets();
 
-planetsContainer.addEventListener('click', (event) => {
+planetsContainerElem.addEventListener('click', (event) => {
   let clickedPlanetId = event.target.dataset.id;
   if (clickedPlanetId === undefined) return;
-  else displayPlanetInfo(clickedPlanetId, planetsList);
+  else displaySlider(clickedPlanetId, planetsList);
 });
 
-btnClose.addEventListener('click', showAndHide);
+planetInfoWrapperElem.addEventListener('click', (event) => {
+  if (event.target.classList.contains('btn__close')) showAndHide();
+});
 
-function displayPlanetInfo(clickedPlanetId) {
+function displaySlider(clickedPlanetId) {
   slider(clickedPlanetId);
   showAndHide();
 }
