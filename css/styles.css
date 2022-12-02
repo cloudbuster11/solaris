@@ -88,7 +88,6 @@ li {
   width: 800px;
   position: absolute;
   left: -700px;
-  /* margin-right: 10vw; */
 }
 
 .planets__merkurius {
@@ -289,16 +288,6 @@ ul {
   cursor: pointer;
 }
 
-.slider__btn--left {
-  left: 6%;
-  transform: translate(-50%, -50%);
-}
-
-.slider__btn--right {
-  right: 6%;
-  transform: translate(50%, -50%);
-}
-
 .dots {
   position: absolute;
   bottom: 5%;
@@ -322,6 +311,17 @@ ul {
 
 .dots__dot:last-child {
   margin: 0;
+}
+
+/* Modifiers */
+.slider__btn--left {
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 6%;
+  transform: translate(50%, -50%);
 }
 
 .dots__dot--active {

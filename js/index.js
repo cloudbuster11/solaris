@@ -1,33 +1,35 @@
 import { slider } from './modules/slider.js';
 import { createInfoHtml, createPlanetsHtml, createErrorHtml } from './modules/createHtml.js';
 
-const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
+const BASE_URL = 'https://my-json-server.typicode.com/zocom-christoffer-wallenberg/solaris-api/';
 const planetsContainerElem = document.querySelector('.planets__container');
 const planetInfoWrapperElem = document.querySelector('.planetsinfo__wrapper');
+
 let planetsList = [];
 
 async function getKey() {
-  const response = await fetch(`${BASE_URL}/keys`, {
-    method: 'POST',
-  });
+  const response = await fetch(`${BASE_URL}/keys`);
   const data = await response.json();
   return data.key;
 }
 
 async function getPlanets() {
-  try {
-    const key = await getKey();
-    const response = await fetch(`${BASE_URL}/bodies`, {
-      headers: {
-        'x-zocom': key,
-      },
-    });
-    let data = await response.json();
+  const key = await getKey();
+  const response = await fetch(`${BASE_URL}/bodies`, {
+    headers: {
+      'x-zocom': key,
+    },
+  });
+
+  let data = await response.json();
+
+  if (response.status !== 200) {
+    console.log(response.status);
+    createErrorHtml(response.status);
+  } else {
     planetsList = data;
     createPlanetsHtml(data, planetsContainerElem);
     createInfoHtml(data);
-  } catch (error) {
-    createErrorHtml(error);
   }
 }
 
