@@ -1,5 +1,5 @@
 import { slider } from './modules/slider.js';
-import { createInfoHtml, createPlanetsHtml } from './modules/createHtml.js';
+import { createInfoHtml, createPlanetsHtml, createErrorHtml } from './modules/createHtml.js';
 
 const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
 const planetsContainerElem = document.querySelector('.planets__container');
@@ -15,16 +15,20 @@ async function getKey() {
 }
 
 async function getPlanets() {
-  const key = await getKey();
-  const response = await fetch(`${BASE_URL}/bodies`, {
-    headers: {
-      'x-zocom': key,
-    },
-  });
-  let data = await response.json();
-  planetsList = data;
-  createPlanetsHtml(data, planetsContainerElem);
-  createInfoHtml(data);
+  try {
+    const key = await getKey();
+    const response = await fetch(`${BASE_URL}/bodies`, {
+      headers: {
+        'x-zocom': key,
+      },
+    });
+    let data = await response.json();
+    planetsList = data;
+    createPlanetsHtml(data, planetsContainerElem);
+    createInfoHtml(data);
+  } catch (error) {
+    createErrorHtml(error);
+  }
 }
 
 getPlanets();

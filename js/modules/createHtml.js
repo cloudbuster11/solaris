@@ -1,5 +1,5 @@
 // I den här modulen finns de funktioner som skapar Html elementen.
-export { createInfoHtml, createPlanetsHtml };
+export { createInfoHtml, createPlanetsHtml, createErrorHtml };
 
 function createPlanetsHtml(planets, planetsContainer) {
   for (let i = 0; i < planets.bodies.length; i++) {
@@ -51,4 +51,12 @@ function createInfoHtml(planets) {
       }
     }
   }
+}
+
+function createErrorHtml(error) {
+  const pageWrapper = document.querySelector('.wrapper');
+  const errorHtml = `<article class="error__container"><h3 class="error__title">Error</h3>
+  <p class="error__message">${error}</p></article>`;
+
+  pageWrapper.insertAdjacentHTML('afterbegin', errorHtml);
 }
